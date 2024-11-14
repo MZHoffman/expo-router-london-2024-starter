@@ -1,42 +1,54 @@
-import React from "react";
-import { Tabs } from "expo-router";
-import customColors from "@/constants/colors";
-import colors from "@/constants/colors";
-import { TabBarIcon } from "@/components/TabBarIcon";
+import React from 'react';
+import { Tabs } from 'expo-router';
+import customColors from '@/constants/colors';
+import colors from '@/constants/colors';
+import { TabBarIcon } from '@/components/TabBarIcon';
 
 export default function TabLayout() {
   return (
     <Tabs
-      sceneContainerStyle={{ backgroundColor: colors.white }}
       screenOptions={{
         headerShown: false,
+        sceneStyle: {
+          backgroundColor: colors.white,
+        },
+        lazy: false,
       }}
     >
       <Tabs.Screen
-        name="index"
+        name='index'
         options={{
-          title: "Home",
+          title: 'Home',
           tabBarActiveTintColor: customColors.tint,
           tabBarIcon: ({ color }) => (
-            <TabBarIcon type="MaterialIcons" name="museum" color={color} />
+            <TabBarIcon type='MaterialIcons' name='museum' color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="exhibits"
+        name='exhibits'
         options={{
-          title: "Exhibits",
+          title: 'Exhibits',
           tabBarIcon: ({ color }) => (
-            <TabBarIcon type="MaterialIcons" name="palette" color={color} />
+            <TabBarIcon type='MaterialIcons' name='palette' color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name='profile'
         options={{
-          title: "Profile",
+          title: 'Profile',
           tabBarIcon: ({ color }) => (
-            <TabBarIcon type="MaterialIcons" name="person" color={color} />
+            <TabBarIcon type='MaterialIcons' name='person' color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='visit'
+        options={{
+          title: 'Visit',
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon type='MaterialIcons' name='map' color={color} />
           ),
         }}
       />
